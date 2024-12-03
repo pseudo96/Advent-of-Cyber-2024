@@ -153,4 +153,4 @@ Upon further investigation it is determined that the credentials for the script 
     
     Ans.: **Install-WindowsUpdate -AcceptAll -AutoReboot**
     
-    ![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%208.png)
+    ![image.png](images/image%208.png)
