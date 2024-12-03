@@ -1,6 +1,6 @@
 # Day 2 - Log Analysis
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image.png)
+![image.png](images/image.png)
 
 This challenge focuses on investigating a brute force attack and subsequent PowerShell command execution using the Elastic SIEM. Another aspect this challenge brings about is how an analyst can differentiate a True Positive from a False Positive alert using the context of the activity.
 
@@ -89,7 +89,7 @@ This challenge focuses on investigating a brute force attack and subsequent Powe
 
 According to the alert sent by the Mayor's office, the activity occurred on Dec 1st, 2024, between 0900 and 0930. 
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%201.png)
+![image.png](images/image%201.png)
 
 To make the events more readable, we can include only the fields of interest in the tabular view. The fields we will be using are:
 
@@ -101,25 +101,25 @@ To make the events more readable, we can include only the fields of interest in 
 
 We see an interesting pattern in the events here. A successful authentication followed by an encoded powershell command execution:
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%202.png)
+![image.png](images/image%202.png)
 
 The time difference on each host between the authentication and command execution activity is precisely 11 seconds. Also for the sake of accountability, it is a best practice to use named accounts to perform administrative activities, whereas in this situation a generic account is used. Upon further investigation it is determined that this account `service_admin`  is shared by 2 administrators who were not in office when this activity occurred. 
 
 Only the authentication events contain the source IP address. We now know that the command execution took place on December 1st. The authentication attempts could have started much before as well. We can now expand our timeline and continue our investigation. 
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%203.png)
+![image.png](images/image%203.png)
 
 A clear spike is visible on December 1st. To investigate this further, we can filter just the authentication events for the `service_admin` user, and from the IP address `10.0.11.11`. Here we see that the But this does not explain the spike:
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%204.png)
+![image.png](images/image%204.png)
 
 Now we can exclude the `10.0.11.11` IP address to understand what is causing the spike. 
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%205.png)
+![image.png](images/image%205.png)
 
 Now we can see where this spike is coming from. The originating IP address is `10.0.255.1`.  We have the one successful authentication event at `Dec 1, 2024 @ 08:54:39.000` on the `ADM-01` host. Every other authentication event is a failure. This is a clear indication of a brute force attempt. The analysts have previously investigated this and found that a script with expired credentials was causing this issue. However, that script was updated with a fresh set of credentials.
 
-![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%206.png)
+![image.png](images/image%206.png)
 
 The results also showed that they succeeded with the brute-force attempt because of the successful authentication attempt and quickly ran some PowerShell commands on the affected machines. Once the PowerShell commands were run, we didn't see any further login attempts. 
 
@@ -137,19 +137,19 @@ Upon further investigation it is determined that the credentials for the script 
     
     Ans.: **6791**
     
-    ![image.png](Day%202%20-%20Log%20Analysis%201519fa490a0e808790ddea777c0ab567/image%207.png)
+    ![image.png](images/image%207.png)
     
 
-1. What is the IP address of Glitch?
+3. What is the IP address of Glitch?
     
     Ans.: **10.0.255.1**
     
 
-1. When did Glitch successfully logon to ADM-01? Format: MMM D, YYYY HH:MM:SS.SSS
+4. When did Glitch successfully logon to ADM-01? Format: MMM D, YYYY HH:MM:SS.SSS
     
     Ans.: **Dec 1, 2024 08:54:39.000**
     
-2. What is the decoded command executed by Glitch to fix the systems of Wareville?
+5. What is the decoded command executed by Glitch to fix the systems of Wareville?
     
     Ans.: **Install-WindowsUpdate -AcceptAll -AutoReboot**
     
