@@ -134,15 +134,18 @@ We know the attacker left a distinctive signature in the PowerShell code (MM). T
 
 Ans: **Tyler Ramsbey**
 
-1. The malicious PowerShell script sends stolen info to a C2 server. What is the URL of this C2 server?
+
+2. The malicious PowerShell script sends stolen info to a C2 server. What is the URL of this C2 server?
 
 Ans: `http://papash3ll[.]thm/data`
 
-1. Who is M.M? Maybe his Github profile page would provide clues?
+
+3. Who is M.M? Maybe his Github profile page would provide clues?
 
 Ans: **Mayor Malware**
 
-1. What is the number of commits on the GitHub repo where the issue was raised?
+
+4. What is the number of commits on the GitHub repo where the issue was raised?
 
 ![image.png](images/image%206.png)
 
