@@ -331,7 +331,7 @@ He is unsure of the correct detection metrics to implement for this test and ask
     Ans.: **THM{GlitchTestingForSpearphishing}**
     
 
-1. What ATT&CK technique ID would be our point of interest?
+2. What ATT&CK technique ID would be our point of interest?
     
     From the challenge prompt, we are told conduct an attack simulating a ransomware execution that makes use of the command and scripting interpreter technique. referring to the MITRE ATT&CK Matrix, we see the technique under the **Execution** tactic. The technique ID here will therefore be T1059.
     
@@ -340,7 +340,7 @@ He is unsure of the correct detection metrics to implement for this test and ask
     Ans.: **T1059**
     
 
-1. What ATT&CK subtechnique ID focuses on the Windows Command Shell?
+3. What ATT&CK subtechnique ID focuses on the Windows Command Shell?
 
     
     ![image.png](images/image%204.png)
@@ -348,7 +348,7 @@ He is unsure of the correct detection metrics to implement for this test and ask
 
 Ans.: **T1059.003**
 
-1. What is the name of the Atomic Test to be simulated?
+4. What is the name of the Atomic Test to be simulated?
     
     Now that we know the subtechnique to be used, the name of the Atomic Test can be retrieved using the following command:
     
@@ -359,14 +359,14 @@ Ans.: **T1059.003**
     From the screenshot above, we see the test associated with BlackByte Ramsomware Print Bombing, whose test number is 4.
     
 
-1. What is the name of the file used in the test?
+5. What is the name of the file used in the test?
     
     From the description found in the `-ShowDetails` output, we can see the name of the file being used in the test.
     
     Ans.: **Wareville-Ransomware.txt**
     
 
-1. What is the flag found from this Atomic Test?
+6. What is the flag found from this Atomic Test?
     
     The test can be run using the following command:
     
