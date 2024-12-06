@@ -346,7 +346,7 @@ He is unsure of the correct detection metrics to implement for this test and ask
     ![image.png](images/image%204.png)
     
 
-Ans.: **T1059.003**
+    Ans.: **T1059.003**
 
 4. What is the name of the Atomic Test to be simulated?
     
@@ -375,8 +375,8 @@ Ans.: **T1059.003**
     After running the command, a pop up comes up on the screen along with a prompt to save a pdf file. Saving this file and opening it, we can see a note with the flag in the end.
     
 
-![image.png](images/image%206.png)
+    ![image.png](images/image%206.png)
 
-![image.png](images/image%207.png)
+    ![image.png](images/image%207.png)
 
-Ans.: **THM{R2xpdGNoIGlzIG5vdCB0aGUgZW5lbXk=}**
+    Ans.: **THM{R2xpdGNoIGlzIG5vdCB0aGUgZW5lbXk=}**
