@@ -154,7 +154,6 @@ root@attackbox:~# ls -lh
 
 ![                                                       VirusTotal Analysis on a previously created payload](images/5f04259cf9bf5b57aed2c476-1729859908974.png)
 
-                                                       VirusTotal Analysis on a previously created payload
 
 **Listening for Incoming Connections**
 
