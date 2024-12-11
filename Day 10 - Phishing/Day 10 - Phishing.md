@@ -217,9 +217,7 @@ The malicious document is ready to be sent to the target user. Follow these step
 
 1. **Target User Details**:
     - Email: `marta@socmas.thm`
-2. **Attacker Credentials**:
-    - Email: `info@socnas.thm`
-    - Password: `MerryPhishMas!`
+2. **Next, log in using the Attacker Credentials given in the challenge**
 3. **Typo-squatting Technique**:
     - The attacker uses a fake domain (`socnas.thm`) similar to the legitimate one (`socmas.thm`) to trick the target.
 4. **Steps to Send the Email**:
