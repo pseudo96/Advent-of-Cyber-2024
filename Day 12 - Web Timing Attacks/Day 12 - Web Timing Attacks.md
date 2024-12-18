@@ -13,6 +13,7 @@ Web applications are typically vulnerable to issues caused by direct input-outpu
 - **Definition**: Observing a web application's response time to infer information.
 - **Mechanism**: Tiny changes in data or request behavior are used to observe response time differences to uncover unauthorized information.
 - **Subtle Nature**: Timing issues range from **1300ms to 5ns**, making them hard to detect.
+- **Research from PortSwigger on Timing Attacks**: https://portswigger.net/research/listen-to-the-whispers-web-timing-attacks-that-actually-work
 
 ---
 
