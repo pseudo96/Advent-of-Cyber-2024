@@ -4,7 +4,7 @@
 
 *Wares are all about security. The Glitch discovers that an app is illegally tracking the cars in Wareville. Not many car thefts in the city warrant such an extreme measure. He reaches out to McSkidy to investigate and identify how the application is tracking them and leaking users' positions.*
 
-# Introduction to WebSocket
+# Introduction to WebSockets
 
 WebSockets allow the browser and server to maintain an open line of communication, enabling back-and-forth data exchange without repeated requests. Unlike traditional HTTP, which follows a request-response model, WebSockets keep the connection open after an initial handshake. This results in reduced overhead and faster communication, making WebSockets ideal for applications like:
 
